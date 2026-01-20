@@ -11,7 +11,6 @@
  */
 package card;
 import java.util.Random;
-import java.util.Scanner;
 
 
 /**
@@ -41,17 +40,6 @@ public class CardTrick {
         //Then report the result here
         // add one luckcard hard code 2,clubs  
         
-        Scanner sc= new Scanner(System.in);
-        System.out.print("Enter card value (1-13): ");
-        int userinput=sc.nextInt();
-        sc.nextLine();
-        
-        System.out.print("Enter suit (Hearts, Diamonds, Spades, Clubs): ");
-        String userselect = sc.nextLine();
-        
-        Card userCard= new Card();
-        userCard.setValue(userinput);
-        userCard.setSuit(userselect);
 
     Card luckyCard= new Card();
     luckyCard.setValue(7);      
@@ -74,3 +62,4 @@ public class CardTrick {
       }
    }
 }     
+
