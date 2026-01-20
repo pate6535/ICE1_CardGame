@@ -1,8 +1,18 @@
+/**
+ * A class that fills a magic hand of 7 cards with random Card Objects
+ * Modified by: Akash Patel
+ * Student Number: 991796430
+ * Date: 2026-01-20
+ */
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package card;
+import java.util.Random;
+import java.util.Scanner;
+
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects
@@ -13,20 +23,50 @@ package card;
 public class CardTrick {
     
     public static void main(String[] args)
-    {
+            {
+        Random rand = new Random();
         Card[] magicHand = new Card[7];
         
         for (int i=0; i<magicHand.length; i++)
         {
             Card c = new Card();
-            //c.setValue(insert call to random number generator here)
-            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            c.setValue(rand.nextInt(13) + 1);//c.setValue(insert call to random number generator here)
+            c.setSuit(Card.SUITS[rand.nextInt(4)]);//c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            
+            magicHand[i]=c;
         }
         
         //insert code to ask the user for Card value and suit, create their card
         // and search magicHand here
         //Then report the result here
-        // add one luckcard hard code 2,clubs
+        // add one luckcard hard code 2,clubs  
+        
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter card value (1-13): ");
+        int userinput=sc.nextInt();
+        sc.nextLine();
+        
+        System.out.print("Enter suit (Hearts, Diamonds, Spades, Clubs): ");
+        String userselect = sc.nextLine();
+        
+        Card userCard= new Card();
+        userCard.setValue(userinput);
+        userCard.setSuit(userselect);
+        
+
+    boolean found = false;
+    for(int i = 0; i < magicHand.length; i++){
+        if (magicHand[i].getValue() == userCard.getValue() &&
+            magicHand[i].getSuit().equalsIgnoreCase(userCard.getSuit())){
+            found = true;
+            break;
+        }
     }
-    
-}
+    if(found){
+       System.out.println("Your card IS in the magic hand!");
+      } 
+    else {
+       System.out.println("Your card is NOT in the magic hand.");
+      }
+   }
+}     
