@@ -1,3 +1,9 @@
+/**
+ * A class that fills a magic hand of 7 cards with random Card Objects
+ * Modified by: Akash Patel
+ * Student Number: 991796430
+ * Date: 2026-01-20
+ */
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
