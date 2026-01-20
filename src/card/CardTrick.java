@@ -52,18 +52,22 @@ public class CardTrick {
         Card userCard= new Card();
         userCard.setValue(userinput);
         userCard.setSuit(userselect);
+
+    Card luckyCard= new Card();
+    luckyCard.setValue(7);      
+    luckyCard.setSuit("Hearts");          
         
 
     boolean found = false;
     for(int i = 0; i < magicHand.length; i++){
-        if (magicHand[i].getValue() == userCard.getValue() &&
-            magicHand[i].getSuit().equalsIgnoreCase(userCard.getSuit())){
+        if (magicHand[i].getValue() == luckyCard.getValue() &&
+            magicHand[i].getSuit().equalsIgnoreCase(lucky.getSuit())){
             found = true;
             break;
         }
     }
     if(found){
-       System.out.println("Your card IS in the magic hand!");
+       System.out.println("Congrats, Your card IS in the magic hand!");
       } 
     else {
        System.out.println("Your card is NOT in the magic hand.");
