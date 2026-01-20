@@ -61,7 +61,7 @@ public class CardTrick {
     boolean found = false;
     for(int i = 0; i < magicHand.length; i++){
         if (magicHand[i].getValue() == luckyCard.getValue() &&
-            magicHand[i].getSuit().equalsIgnoreCase(lucky.getSuit())){
+            magicHand[i].getSuit().equalsIgnoreCase(luckyCard.getSuit())){
             found = true;
             break;
         }
